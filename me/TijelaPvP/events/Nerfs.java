@@ -1,0 +1,178 @@
+package me.TijelaPvP.events;
+
+
+import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
+import org.bukkit.potion.PotionEffectType;
+
+public class Nerfs
+  implements Listener
+{
+  @SuppressWarnings("deprecation")
+@EventHandler
+  public void NerfsDanos(EntityDamageByEntityEvent event)
+  {
+    if ((event.getDamager() instanceof Player))
+    {
+      Player player = (Player)event.getDamager();
+      if (event.getDamage() > 1.0D) {
+        event.setDamage(event.getDamage() - 1.0D);
+      }
+      if ((event.getDamager() instanceof Player))
+      {
+        if ((player.getFallDistance() > 0.0F) && (!player.isOnGround()) && (!player.hasPotionEffect(PotionEffectType.BLINDNESS)))
+        {
+          int NewDamage = (int)(event.getDamage() * 1.5D) - (int)event.getDamage();
+          if (event.getDamage() > 1.0D) {
+            event.setDamage(event.getDamage() - NewDamage);
+          }
+        }
+        if (player.getItemInHand().getType() == Material.WOOD_SWORD) {
+          event.setDamage(1.0D);
+        }
+        if (player.getItemInHand().getType() == Material.STONE_SWORD) {
+          event.setDamage(2.0D);
+        }
+        if (player.getItemInHand().getType() == Material.IRON_SWORD) {
+          event.setDamage(4.0D);
+        }
+        if (player.getItemInHand().getType() == Material.DIAMOND_SWORD) {
+          event.setDamage(5.0D);
+        }
+        if (player.getItemInHand().getType() == Material.WOOD_AXE) {
+          event.setDamage(1.0D);
+        }
+        if (player.getItemInHand().getType() == Material.STONE_AXE) {
+          event.setDamage(2.0D);
+        }
+        if (player.getItemInHand().getType() == Material.IRON_AXE) {
+          event.setDamage(4.0D);
+        }
+        if (player.getItemInHand().getType() == Material.DIAMOND_AXE) {
+          event.setDamage(5.0D);
+        }
+        if (player.getItemInHand().containsEnchantment(Enchantment.DAMAGE_ALL)) {
+          event.setDamage(event.getDamage() + 1.0D);
+        }
+        if ((player.getFallDistance() > 0.0F) && (!player.isOnGround()) && (!player.hasPotionEffect(PotionEffectType.BLINDNESS)))
+        {
+          if (player.getItemInHand().getType() == Material.WOOD_SWORD) {
+            event.setDamage(event.getDamage() + 1.0D);
+          }
+          if (player.getItemInHand().getType() == Material.STONE_SWORD) {
+            event.setDamage(event.getDamage() + 1.0D);
+          }
+          if (player.getItemInHand().getType() == Material.IRON_SWORD) {
+            event.setDamage(event.getDamage() + 1.0D);
+          }
+          if (player.getItemInHand().getType() == Material.DIAMOND_SWORD) {
+            event.setDamage(event.getDamage() + 1.0D);
+          }
+          if ((player.getFallDistance() > 0.0F) && (player.hasPotionEffect(PotionEffectType.INCREASE_DAMAGE)))
+          {
+            if (player.getItemInHand().getType() == Material.WOOD_SWORD) {
+              event.setDamage(event.getDamage() + 1.5D);
+            }
+            if (player.getItemInHand().getType() == Material.STONE_SWORD) {
+              event.setDamage(event.getDamage() + 1.5D);
+            }
+            if (player.getItemInHand().getType() == Material.IRON_SWORD) {
+              event.setDamage(event.getDamage() + 1.5D);
+            }
+            if (player.getItemInHand().getType() == Material.DIAMOND_SWORD) {
+              event.setDamage(event.getDamage() + 1.5D);
+            }
+            if (player.getItemInHand().getType() == Material.WOOD_AXE) {
+              event.setDamage(event.getDamage() + 1.5D);
+            }
+            if (player.getItemInHand().getType() == Material.STONE_AXE) {
+              event.setDamage(event.getDamage() + 1.5D);
+            }
+            if (player.getItemInHand().getType() == Material.IRON_AXE) {
+              event.setDamage(event.getDamage() + 1.5D);
+            }
+            if (player.getItemInHand().getType() == Material.DIAMOND_AXE) {
+              event.setDamage(event.getDamage() + 1.5D);
+            }
+          }
+          if ((player.getFallDistance() > 0.0F) && (player.hasPotionEffect(PotionEffectType.INCREASE_DAMAGE)) && (!player.isOnGround()))
+          {
+            if (player.getItemInHand().getType() == Material.WOOD_SWORD) {
+              event.setDamage(event.getDamage() + 0.5D);
+            }
+            if (player.getItemInHand().getType() == Material.STONE_SWORD) {
+              event.setDamage(event.getDamage() + 0.5D);
+            }
+            if (player.getItemInHand().getType() == Material.IRON_SWORD) {
+              event.setDamage(event.getDamage() + 0.5D);
+            }
+            if (player.getItemInHand().getType() == Material.DIAMOND_SWORD) {
+              event.setDamage(event.getDamage() + 0.5D);
+            }
+            if (player.getItemInHand().getType() == Material.WOOD_AXE) {
+              event.setDamage(event.getDamage() + 0.5D);
+            }
+            if (player.getItemInHand().getType() == Material.STONE_AXE) {
+              event.setDamage(event.getDamage() + 0.5D);
+            }
+            if (player.getItemInHand().getType() == Material.IRON_AXE) {
+              event.setDamage(event.getDamage() + 0.5D);
+            }
+            if (player.getItemInHand().getType() == Material.DIAMOND_AXE) {
+              event.setDamage(event.getDamage() + 0.5D);
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  @EventHandler
+  public void Quebrar(PlayerMoveEvent e)
+  {
+    Player p = e.getPlayer();
+    ItemStack item1 = p.getItemInHand();
+    Material material1 = Material.getMaterial(item1.getTypeId());
+    if ((!material1.isBlock()) && (material1.getMaxDurability() >= 1) && (item1.getDurability() != 0))
+    {
+      p.getItemInHand().setDurability((short)0);
+      p.updateInventory();
+    }
+    PlayerInventory item2 = p.getInventory();
+    if (p.getInventory().getHelmet() != null)
+    {
+      Material material2 = Material.getMaterial(item2.getHelmet().getTypeId());
+      if ((!material2.isBlock()) && (material2.getMaxDurability() >= 1) && (item2.getHelmet().getDurability() != 0)) {
+        p.getInventory().getHelmet().setDurability((short)1);
+      }
+    }
+    if (p.getInventory().getChestplate() != null)
+    {
+      Material material2 = Material.getMaterial(item2.getChestplate().getTypeId());
+      if ((!material2.isBlock()) && (material2.getMaxDurability() >= 1) && (item2.getChestplate().getDurability() != 0)) {
+        p.getInventory().getChestplate().setDurability((short)1);
+      }
+    }
+    if (p.getInventory().getLeggings() != null)
+    {
+      Material material2 = Material.getMaterial(item2.getLeggings().getTypeId());
+      if ((!material2.isBlock()) && (material2.getMaxDurability() >= 1) && (item2.getLeggings().getDurability() != 0)) {
+        p.getInventory().getLeggings().setDurability((short)1);
+      }
+    }
+    if (p.getInventory().getBoots() != null)
+    {
+      Material material2 = Material.getMaterial(item2.getBoots().getTypeId());
+      if ((!material2.isBlock()) && (material2.getMaxDurability() >= 1) && (item2.getBoots().getDurability() != 0)) {
+        p.getInventory().getBoots().setDurability((short)1);
+      }
+    }
+  }
+}

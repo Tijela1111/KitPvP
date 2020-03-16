@@ -1,0 +1,22 @@
+name: GDD - KITPVP
+main: me.TijelaPvP.Main
+author: Tijela_Quebrada
+version: 1.0
+commands:
+  spawn:
+  mlg:
+  main:
+  fps:
+  knock:
+  rdm:
+  challenge:
+  pl:
+  gm:
+  bc:
+  kit:
+  build:
+  ping:
+  report:
+  togglepvp:
+  youtuber:
+  ip:
